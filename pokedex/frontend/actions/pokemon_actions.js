@@ -8,10 +8,10 @@ export const receiveAllPokemon = pokemon => ({
   pokemon
 });
 
-export const receivePokemon = pokemon => {
+export const receivePokemon = entities => {
   return ({
   type: RECEIVE_POKEMON,
-  pokemon
+  entities
 })};
 
 export const requestAllPokemon = () => (dispatch) => (
@@ -21,5 +21,5 @@ export const requestAllPokemon = () => (dispatch) => (
 
 export const requestPokemon = (id) => (dispatch) => (
   APIUtil.fetchPokemon(id)
-    .then(({pokemon}) => dispatch(receivePokemon(pokemon)))
+    .then(entities => dispatch(receivePokemon(entities)))
 )

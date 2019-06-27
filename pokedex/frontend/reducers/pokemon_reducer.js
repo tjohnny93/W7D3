@@ -6,7 +6,6 @@ const pokemonReducer = (state = {}, action) => {
 
   switch(action.type) {
     case RECEIVE_ALL_POKEMON:
-      debugger
       for (let i = 0; i < action.pokemon.length; i++) {
         nextState[action.pokemon[i].id] = action.pokemon[i];
       }
@@ -14,8 +13,7 @@ const pokemonReducer = (state = {}, action) => {
     case RECEIVE_POKEMON:
       debugger
       nextState = Object.assign({}, state);
-      nextState[action.pokemon.id] = action.pokemon;
-
+      nextState[action.entities.pokemon.id] = action.entities.pokemon;
       return nextState;
     default:
       return state;
