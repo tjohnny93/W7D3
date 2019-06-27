@@ -8,5 +8,7 @@
 #   end
 # end
 
-json.array! @guests, :name, :age, :favorite_color
+guests = @guests.select { |guest| guest.age > 40 && guest.age < 50 }
+
+json.array! guests, :name, :age, :favorite_color
 
