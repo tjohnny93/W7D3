@@ -5,7 +5,6 @@ const pokemonReducer = (state = {}, action) => {
   let nextState = Object.assign({}, state);
   switch(action.type) {
     case RECEIVE_ALL_POKEMON:
-      debugger
       for (let i = 0; i < action.pokemon.length; i++) {
         nextState[action.pokemon[i].id] = action.pokemon[i];
       }
