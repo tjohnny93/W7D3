@@ -11,6 +11,10 @@ class PokemonIndex extends React.Component{
   componentDidMount() {
     this.props.requestAllPokemon();
   }
+
+  componentWillUnmount() {
+    this.setState({});
+  }
   
   render() {
     return (

@@ -226,9 +226,17 @@ function (_React$Component) {
       this.props.requestPokemon(this.props.match.params.pokeId);
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if (this.props.match.params.pokeId !== prevProps.match.params.pokeId) {
+        this.props.requestPokemon(this.props.match.params.pokeId);
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
-      if (this.props.entities.pokemon[this.props.match.params.pokeId] === undefined) return null;
+      debugger;
+      if (!this.props.entities) return null;
       var _this$props$entities = this.props.entities,
           pokemon = _this$props$entities.pokemon,
           items = _this$props$entities.items;
@@ -350,6 +358,11 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.requestAllPokemon();
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.setState({});
     }
   }, {
     key: "render",
@@ -652,7 +665,20 @@ var selectPokemon = function selectPokemon(state) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-
+// import { RECEIVE_POKEMON } from '../actions/pokemon_actions';
+// const uiReducer = (state = {}, action) => {
+//   Object.freeze(state);
+//   let nextState = {};
+//   switch (action.type) {
+//     case RECEIVE_POKEMON:
+//       nextState = Object.assign({}, state);
+//       nextState = true;
+//       return nextState;
+//     default:
+//       return state;
+//   }
+// };
+// export default uiReducer;
 
 /***/ }),
 
