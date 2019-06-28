@@ -6,7 +6,6 @@ const itemsReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_POKEMON:
-      debugger
       nextState = Object.assign({}, state);
       action.entities.pokemon.item_ids.forEach(item_id => {
         nextState[item_id] = action.entities.items[String(item_id)];       

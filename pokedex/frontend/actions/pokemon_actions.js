@@ -10,16 +10,17 @@ export const receiveAllPokemon = pokemon => ({
 
 export const receivePokemon = entities => {
   return ({
-  type: RECEIVE_POKEMON,
-  entities
-})};
+    type: RECEIVE_POKEMON,
+    entities
+  });
+};
 
 export const requestAllPokemon = () => (dispatch) => (
   APIUtil.fetchAllPokemon()
     .then(pokemon => dispatch(receiveAllPokemon(pokemon)))
-)
+);
 
 export const requestPokemon = (id) => (dispatch) => (
   APIUtil.fetchPokemon(id)
     .then(entities => dispatch(receivePokemon(entities)))
-)
+);

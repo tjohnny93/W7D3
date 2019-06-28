@@ -11,7 +11,6 @@ const pokemonReducer = (state = {}, action) => {
       }
       return nextState;
     case RECEIVE_POKEMON:
-      debugger
       nextState = Object.assign({}, state);
       nextState[action.entities.pokemon.id] = action.entities.pokemon;
       return nextState;
